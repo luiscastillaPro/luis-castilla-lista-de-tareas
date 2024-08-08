@@ -1,36 +1,38 @@
-import React, {useState} from "react";
-                                
-const FormularioTareas = ({tareas,cambiarTareas}) => {
-    const [inputTarea, CambiarInputTarea] = useState("");
+import React, { useState } from "react";
 
-    const handleInput = (e) => {
-        CambiarInputTarea(e.target.value);
-    };
+const FormularioTareas = ({ listaTareas, setListaTareas }) => {
+    const [inputTarea, setInputTarea] = useState("");
+
+    const handleInputChange = (e) => setInputTarea(e.target.value);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (inputTarea.trim() === "") return;
 
-        cambiarTareas([...tareas,{
-            id: Date.now(),
-            texto: inputTarea,
-            completada: false
-        }])
-        CambiarInputTarea("");
+        setListaTareas(
+            [
+            ...listaTareas,
+            { 
+                id: Date.now(),
+                texto: inputTarea.trim() 
+            }
+        ]);
+
+        setInputTarea("");
     };
-    
-	return (
-		<form className="formulario-tareas" onSubmit={handleSubmit}>
-            <input 
+
+    return (
+        <form className="formulario-tareas" onSubmit={handleSubmit}>
+            <input
+                className="formulario-tareas__input"
                 type="text"
-                className="formulario-tareas__input" 
                 placeholder="Escribe una tarea"
                 value={inputTarea}
-                onChange={(e)=>{handleInput(e)}}
+                onChange={handleInputChange}
             />
         </form>
-	);
+    );
 };
 
 export default FormularioTareas;
