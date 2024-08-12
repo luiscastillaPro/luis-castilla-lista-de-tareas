@@ -1,5 +1,5 @@
 body{
-    background-image: url(https://previews.123rf.com/images/vronivis/vronivis2106/vronivis210600020/170075099-fondo-de-patr%C3%B3n-de-hojas-verdes-fondo-natural-y-papel-tapiz-naturaleza-de-la-hoja-verde-en-el.jpg);
+    background-image: url(https://img.freepik.com/foto-gratis/hermoso-camino-madera-que-impresionantes-arboles-coloridos-bosque_181624-5840.jpg?t=st=1723196275~exp=1723199875~hmac=aea9f84784be2a1c4d6a50bf37694569629bbc89b504ab426c5a65b3f77317ed&w=1380);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -83,4 +83,54 @@ body{
     margin: 20px 0;
     color: #000000;
     font-size: 25px;
+}
+
+.contador{
+    background: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0;
+    color: red;
+    font-weight: 600;
+}
+
+.lista-tareas__icono-check{
+    margin-right: 20px;
+    font-size: 26px;
+}
+
+.lista-tareas__contenedor-botones{
+    display: flex;
+}
+
+.lista-tareas__icono__accion{
+    margin-left: 20px;
+}
+
+.header-boton{
+    font-size: 13px;
+    background: rgb(172, 172, 172);
+    font-weight: 600;
+}
+
+.formulario-editar-tarea{
+    display: flex;
+}
+
+.formulario-editar-tarea__input{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(198, 198, 198);
+    background: none;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.formulario-editar-tarea__btn{
+    border: none;
+    background: green;
+    cursor: pointer;
+    color: white;
+    padding: 0 10px;
+    border-radius: 3px;
 }

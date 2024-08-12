@@ -10,12 +10,11 @@ const FormularioTareas = ({ listaTareas, setListaTareas }) => {
 
         if (inputTarea.trim() === "") return;
 
-        setListaTareas(
-            [
-            ...listaTareas,
+        setListaTareas([...listaTareas,
             { 
                 id: Date.now(),
-                texto: inputTarea.trim() 
+                texto: inputTarea.trim(),
+                completada: false 
             }
         ]);
 
@@ -23,13 +22,13 @@ const FormularioTareas = ({ listaTareas, setListaTareas }) => {
     };
 
     return (
-        <form className="formulario-tareas" onSubmit={handleSubmit}>
+        <form className="formulario-tareas" onSubmit={(e)=>{handleSubmit(e)}}>
             <input
                 className="formulario-tareas__input"
                 type="text"
                 placeholder="Escribe una tarea"
                 value={inputTarea}
-                onChange={handleInputChange}
+                onChange={(e)=>{handleInputChange(e)}} 
             />
         </form>
     );
