@@ -1,24 +1,19 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Header from "./Header";
 import FormularioTareas from "./FormularioTareas";
 import ListaTareas from "./ListaTareas";
 
 const App = () => {   
-    const [listaTareas, setListaTareas] = useState(
-        [
-            {
-                id: 1,
-                texto: "lavar la ropa",
-                completada: false
-            },
-            {
-                id: 2,
-                texto: "tender la cama",
-                completada: false
-            }
-        ]
-    );
+    const [listaTareas, setListaTareas] = useState([]);
     const [mostrarCompletadas, setCambiarMostrarCompletadas] = useState(false);
+
+    useEffect(()=>{
+        fetch("https://playground.4geeks.com/todo/users/luis_castilla")
+            .then(res=>res.json())
+            .then(data=>setListaTareas(data.todos))
+            .catch(error => console.error("Error al cargar la lista:", error));
+    },[])
+
     return (
         <div className="contenedor">
             <Header 

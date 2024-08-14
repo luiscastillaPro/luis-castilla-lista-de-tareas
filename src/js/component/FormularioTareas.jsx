@@ -7,16 +7,24 @@ const FormularioTareas = ({ listaTareas, setListaTareas }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         if (inputTarea.trim() === "") return;
 
-        setListaTareas([...listaTareas,
-            { 
-                id: Date.now(),
-                texto: inputTarea.trim(),
-                completada: false 
+        fetch("https://playground.4geeks.com/todo/todos/luis_castilla",{
+                method: "POST",
+                body: JSON.stringify(
+                    { 
+                    label: inputTarea.trim(),
+                    is_done: false}
+                ),
+                headers: {
+                    "Content-Type": "application/json"
+                  }
             }
-        ]);
+        )
+            .then(res=>res.json())
+            .then(data=>setListaTareas([...listaTareas,data]))
+            .catch(error => console.error("Error al cargar la lista:", error))
+        
 
         setInputTarea("");
     };
