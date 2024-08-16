@@ -49,6 +49,24 @@ const Tarea = ({ tarea, borrarTarea, toggleCompletada, editarTarea }) => {
         .catch(error => console.error("Error al actualizar la tarea:", error));
     };
 
+    const handleBorrarTarea = () => {
+        fetch(`https://playground.4geeks.com/todo/todos/${tarea.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => {
+            if (res.ok) {
+                borrarTarea(tarea.id);
+            } else {
+                console.error("Error al eliminar la tarea");
+            }
+        })
+        .catch(error => console.error("Error al eliminar la tarea:", error));
+    };
+
+
 
     return (
         <li className="lista-tareas__tarea">
@@ -82,7 +100,7 @@ const Tarea = ({ tarea, borrarTarea, toggleCompletada, editarTarea }) => {
                 <FontAwesomeIcon
                     icon={faTrash}
                     className="lista-tareas__icono lista-tareas__icono__accion"
-                    onClick={() => borrarTarea(tarea.id)}
+                    onClick={handleBorrarTarea}
                 />
             </div>
         </li>
