@@ -2,6 +2,7 @@ import React from "react";
 import Tarea from "./Tarea";
 
 const ListaTareas = ({ listaTareas, setListaTareas, mostrarCompletadas }) => {
+
     const toggleCompletada = (id) => {
         setListaTareas(listaTareas.map((tarea) => {
             if (tarea.id === id) {
@@ -21,7 +22,7 @@ const ListaTareas = ({ listaTareas, setListaTareas, mostrarCompletadas }) => {
     };
 
     const borrarTarea = (id) => {
-        setListaTareas(listaTareas.filter(tarea => tarea.id !== id));
+        setListaTareas(listaTareas.filter((tarea) => tarea.id !== id));
     };
 
     return (

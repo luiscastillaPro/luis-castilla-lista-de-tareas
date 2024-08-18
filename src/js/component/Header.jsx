@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ mostrarCompletadas, setCambiarMostrarCompletadas }) => {
+    
     const toggleCompletadas = () => {
         setCambiarMostrarCompletadas(!mostrarCompletadas);
     };
@@ -17,11 +18,15 @@ const Header = ({ mostrarCompletadas, setCambiarMostrarCompletadas }) => {
                 {mostrarCompletadas ? 
                     <>
                         No mostrar completadas
-                        <FontAwesomeIcon icon={faEyeSlash} className="header__icono-boton" />
+                        <FontAwesomeIcon 
+                        icon={faEyeSlash} 
+                        className="header__icono-boton" />
                     </> :
                     <>
                         Mostrar completadas
-                        <FontAwesomeIcon icon={faEye} className="header__icono-boton" />
+                        <FontAwesomeIcon 
+                        icon={faEye} 
+                        className="header__icono-boton" />
                     </>
                 }
             </button>

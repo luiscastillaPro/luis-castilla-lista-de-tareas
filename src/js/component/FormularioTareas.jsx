@@ -5,27 +5,28 @@ const FormularioTareas = ({ listaTareas, setListaTareas }) => {
 
     const handleInputChange = (e) => setInputTarea(e.target.value);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (inputTarea.trim() === "") return;
-
-        fetch("https://playground.4geeks.com/todo/todos/luis_castilla",{
+    
+        try {
+            const res = await fetch("https://playground.4geeks.com/todo/todos/luis_castilla", {
                 method: "POST",
-                body: JSON.stringify(
-                    { 
+                body: JSON.stringify({ 
                     label: inputTarea.trim(),
-                    is_done: false}
-                ),
+                    is_done: false
+                }),
                 headers: {
                     "Content-Type": "application/json"
-                  }
-            }
-        )
-            .then(res=>res.json())
-            .then(data=>setListaTareas([...listaTareas,data]))
-            .catch(error => console.error("Error al cargar la lista:", error))
-        
-
+                }
+            });
+    
+            const data = await res.json();
+            setListaTareas([...listaTareas, data]);
+        } catch (error) {
+            console.error("Error al cargar la lista:", error);
+        }
+    
         setInputTarea("");
     };
 
