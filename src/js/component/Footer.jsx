@@ -33,7 +33,7 @@ const Footer = ({ listaTareas, setListaTareas }) => {
 
     return (
         <div>
-            <button onClick={eliminarYRecrearUsuario}>Eliminar todas las Tareas</button>
+            <button className="footer-boton" onClick={eliminarYRecrearUsuario}>Eliminar todas las Tareas</button>
             <p className="contador">Tengo {listaTareas.length} tareas</p>
         </div>
     );

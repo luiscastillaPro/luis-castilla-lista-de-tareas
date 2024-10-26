@@ -1,136 +1,253 @@
-body{
-    background-image: url(https://img.freepik.com/foto-gratis/hermoso-camino-madera-que-impresionantes-arboles-coloridos-bosque_181624-5840.jpg?t=st=1723196275~exp=1723199875~hmac=aea9f84784be2a1c4d6a50bf37694569629bbc89b504ab426c5a65b3f77317ed&w=1380);
-    background-repeat: no-repeat;
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #f3f3f3;
 }
 
-.contenedor{
-    margin: auto;
+.contenedor {
+    margin: 12vh auto;
     max-width: 700px;
-    width: 100%;
-    height: 100%;
-    max-height: 90vh;
-    box-shadow: 0 4px 30px white;
-    border-radius: 5px;
-    margin-top: 100px;
+    width: 90%;
+    padding: 20px;
+    background-color: rgba(50, 50, 70, 0.8); /* Fondo oscuro y translúcido */
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.5); /* Sombra con color vibrante */
+    border-radius: 10px;
 }
 
-.header{
-    background: black;
+/* Header */
+.header {
     text-align: center;
     padding: 20px;
 }
 
-.header__titulo{
-    font-size: 50px;
-    color: rgb(229, 229, 229);
+.header__titulo {
+    font-size: 3em;
+    color: #ff3cec; /* Color fucsia vibrante */
+    text-shadow: 2px 2px 10px rgba(255, 0, 150, 0.8);
 }
 
-.formulario-tareas{
+/* Formulario de tareas */
+.formulario-tareas {
     padding: 20px;
-    box-shadow: 0 4px 30px white;
-    background: white;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.formulario-tareas__input{
+.formulario-tareas__input {
     border: none;
     padding: 15px;
     width: 100%;
-    color: black;
-    font-size: 20px;
-    border-bottom: 2px solid blue;
+    font-size: 1.2em;
+    color: #ff3cec;
+    background: transparent;
+    border-bottom: 2px solid #ff3cec;
+    transition: 0.3s;
 }
 
-.formulario-tareas__input:focus{
+.formulario-tareas__input:focus {
     outline: none;
-    color: black;
+    border-bottom: 2px solid #00ff62;
+    color: #ffffff;
 }
 
+/* Lista de tareas */
 .lista-tareas {
     list-style: none;
     height: 100%;
-    overflow: auto;
+    overflow-y: auto;
     padding: 20px;
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
 }
 
 .lista-tareas__tarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    position: relative;
-    font-size: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(75, 75, 100, 0.6);
+    border-radius: 8px;
+    font-size: 1.2em;
+    transition: transform 0.2s;
 }
 
-.lista-tareas__texto{
-    text-align: left;
+.lista-tareas__texto {
     width: 100%;
+    color: #ff3cec;
 }
 
-.lista-tareas__tarea:hover{
-    opacity: 0.5;
+.lista-tareas__tarea:hover {
+    transform: scale(1.02);
+    background-color: rgba(255, 0, 150, 0.2);
 }
 
-.lista-tareas__icono{
+.lista-tareas__icono {
     cursor: pointer;
-    font-size: 20px;
-    color: black;
+    font-size: 1.5em;
+    color: #ff3cec;
+    transition: color 0.3s;
 }
 
-.lista-tareas__mensaje {
-    text-align: center;
-    margin: 20px 0;
-    color: #000000;
-    font-size: 25px;
+.lista-tareas__icono:hover {
+    color: #00ff62;
 }
 
-.contador{
-    background: white;
-    text-align: center;
-    font-size: 20px;
-    padding: 10px 0;
-    color: red;
-    font-weight: 600;
+/* Botones de acción */
+.lista-tareas__icono__accion {
+    margin-left: 10px;
+    color: #ff3cec;
+    transition: 0.3s;
+}
+
+.lista-tareas__icono__accion:hover {
+    color: #00ff62;
 }
 
 .lista-tareas__icono-check{
-    margin-right: 20px;
-    font-size: 26px;
+    margin-right: .8rem;
+}
+
+.lista-tareas__mensaje{
+    text-align: center;
+}
+
+/* Contador */
+.contador {
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2em;
+    color: #ff3cec;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-top: 18px;
+    margin-bottom: 0px;
+}
+
+/* Botones de formulario de edición */
+.formulario-editar-tarea__input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-bottom: 2px solid #ff3cec;
+    color: #ffffff;
+}
+
+.formulario-editar-tarea__btn {
+    padding: 4px 10px;
+    background: #ff3cec;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.formulario-editar-tarea__btn:hover {
+    background: #3161ff;
+}
+
+/* Botón de eliminar todas las tareas */
+.footer-boton {
+    padding: 10px 20px;
+    background-color: #ff3cec; /* Fucsia vibrante */
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 0, 150, 0.5); /* Sombra de color */
+    transition: background 0.3s, transform 0.2s;
+}
+
+.footer-boton:hover {
+    background-color: #3161ff; /* Cambio de color al pasar el cursor */
+    transform: scale(1.05); /* Ligeramente más grande */
+}
+
+/* Botón de mostrar/completar tareas en el header */
+.header-boton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #ff3cec; /* Color fucsia */
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 0, 150, 0.5); /* Sombra de color */
+    transition: background 0.3s, transform 0.2s;
+    margin: auto;
+}
+
+.header-boton:hover {
+    background-color: #3161ff; /* Cambio de color */
+    transform: scale(1.05); /* Ligeramente más grande */
+}
+
+.header__icono-boton {
+    font-size: 1.2em;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.header__icono-boton:hover {
+    color: #24243e; /* Oscurecido para dar efecto de pulsación */
 }
 
 .lista-tareas__contenedor-botones{
     display: flex;
 }
 
-.lista-tareas__icono__accion{
-    margin-left: 20px;
+/* Estilos responsive */
+
+/* Ajustes generales para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .contenedor {
+        width: 95%; /* Se hace un poco más ancho en móviles */
+        padding: 15px;
+        margin: 8vh auto;
+    }
+
+    .header__titulo {
+        font-size: 2em; /* Reduce el tamaño del título */
+    }
+
+    .formulario-tareas__input {
+        font-size: 1em; /* Ajusta el tamaño de la fuente del input */
+    }
+
+    .lista-tareas__tarea {
+        font-size: 1em; /* Ajusta el tamaño de fuente de las tareas */
+        padding: 10px; /* Menos espacio de padding */
+    }
+
+    .footer-boton, .header-boton {
+        padding: 8px 16px; /* Reduce el tamaño de los botones */
+        font-size: 0.9em;
+    }
+
+    .contador {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .header-boton {
+        gap: 6px; /* Reduce el espacio entre icono y texto */
+    }
 }
 
-.header-boton{
-    font-size: 13px;
-    background: rgb(172, 172, 172);
-    font-weight: 600;
-}
 
-.formulario-editar-tarea{
-    display: flex;
-}
 
-.formulario-editar-tarea__input{
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid rgb(198, 198, 198);
-    background: none;
-    font-size: 20px;
-    margin-right: 20px;
-}
 
-.formulario-editar-tarea__btn{
-    border: none;
-    background: green;
-    cursor: pointer;
-    color: white;
-    padding: 0 10px;
-    border-radius: 3px;
-}
